@@ -23,3 +23,4 @@ ENV debug_level=1
 ENV HOSTNAME=main
 RUN node bin/build.js dist && bin/control.sh setup
 CMD ["node", "bin/docker-entrypoint.js"]
+RUN apt-get update && apt-get install -y rsync && rm -rf /var/lib/apt/lists/*
